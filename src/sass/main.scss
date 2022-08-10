@@ -1,0 +1,25 @@
+//abstract files
+@import "./abstract/mixins";
+@import "./abstract/variables";
+
+//base files
+@import "./base/reset";
+@import "./base/typography";
+
+//components files
+@import "./components/button";
+@import "./components/eventCard";
+
+//layout files
+@import "./layout/footer";
+@import "./layout/forms";
+@import "./layout/grid";
+@import "./layout/header";
+@import "./layout/menu";
+@import "./layout/navigation";
+
+//pages files
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/gallery";
+@import "./pages/home";

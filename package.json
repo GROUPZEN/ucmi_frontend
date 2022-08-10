@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "ucmi_webapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "write": "node-sass src/sass/main.scss src/assets/css/styles.css -w"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1"
   }
 }

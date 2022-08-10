@@ -1,0 +1,17 @@
+.nav {
+  &__img {
+    &--file {
+      width: 5.5rem;
+      height: 5.5rem;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+  }
+
+  &__menu {
+    &--link {
+    }
+  }
+}

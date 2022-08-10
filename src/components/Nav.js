@@ -13,10 +13,10 @@ const Nav = () => {
         />
       </div>
       <div className="nav__name">
-        <h3>united christian ministries international</h3>
+        <h3 className="">united christian ministries international</h3>
       </div>
       <div className="nav__menu">
-        <span className="nav__menu--link">menu</span>
+        <span className="primary-linear-heading">menu</span>
       </div>
     </nav>
   );

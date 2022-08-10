@@ -1,0 +1,50 @@
+//? imports of Rubik typography
+@font-face {
+  font-family: "Rubik Bold";
+  src: url("../fonts/rubik/Rubik-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rubik Bold Italic";
+  src: url("../fonts/rubik/Rubik-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Rubik Regular";
+  src: url("../fonts/rubik/Rubik-Regular.ttf");
+}
+
+//? imports of Rambla typography
+@font-face {
+  font-family: "Rambla Bold";
+  src: url("../fonts/rambla/Rambla-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rambla Italic";
+  src: url("../fonts/rambla/Rambla-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Rambla Regular";
+  src: url("../fonts/rambla/Rambla-Regular.ttf");
+}
+
+//? Heading Typography
+.primary-heading {
+  font: 600 $size-larger "Rubik Bold";
+}
+
+.secondary-heading {
+  font: 600 $size-large "Rubik Bold";
+}
+
+.primary-linear-heading {
+  background: linear-gradient(
+    to right bottom,
+    $primary-color-50,
+    $secondary-color-50
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}

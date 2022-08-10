@@ -1,17 +1,28 @@
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+
   &__img {
     &--file {
-      width: 5.5rem;
-      height: 5.5rem;
-      object-fit: contain;
+      width: 7rem;
+      height: 7rem;
+      object-fit: cover;
     }
   }
 
   &__name {
+    h3 {
+      font: 300 2.4rem "Rubik Regular";
+      color: $primary-color-60;
+      text-transform: uppercase;
+    }
   }
 
   &__menu {
-    &--link {
-    }
+    font: 300 2.4rem "Rubik Bold";
+    text-transform: uppercase;
   }
 }

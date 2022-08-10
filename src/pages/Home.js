@@ -4,9 +4,9 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Header />
-    </div>
+    </main>
   );
 };
 

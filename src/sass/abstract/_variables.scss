@@ -54,3 +54,10 @@ $size: 2.4rem;
 $size-small: 2rem;
 $size-smaller: 1.8rem;
 $size-smallest: 1.6rem;
+
+//? linear gradient
+$linear-gradient: linear-gradient(
+  to right bottom,
+  $primary-color-50,
+  $secondary-color-50
+);

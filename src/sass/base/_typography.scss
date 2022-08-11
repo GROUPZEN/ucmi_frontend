@@ -48,3 +48,11 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.primary-linear-background {
+  background: linear-gradient(
+    to right bottom,
+    $primary-color-50,
+    $secondary-color-50
+  );
+}

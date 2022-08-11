@@ -10,4 +10,12 @@
     color: $neutral-color-0;
     font: 300 $size-small "Rambla Regular";
   }
+
+  &__pay {
+    padding: 3rem 6rem;
+    background-color: $secondary-color-50;
+    color: $neutral-color-0;
+    border-radius: 0;
+    font: 300 $size-large "Rambla Regular";
+  }
 }

@@ -23,6 +23,7 @@ a:visited {
 button,
 input {
   border: 0;
+  cursor: pointer;
 
   &:focus {
     outline: 0;

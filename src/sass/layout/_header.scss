@@ -15,9 +15,78 @@
   grid-template-rows: 80% 20%;
 
   &__container {
-    height: 110%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2rem;
+    height: 105%;
     border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgba($primary-color-40, 0.1) 0px 1rem 2rem 0px;
+  }
+
+  &__left {
+    position: relative;
+    @include flexcenter;
+
+    &--name {
+      position: absolute;
+      bottom: 6%;
+      left: 20%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border-radius: 1rem;
+      padding: 1rem 3rem;
+      text-transform: capitalize;
+      box-shadow: rgba($primary-color-40, 0.1) 0px 0.5rem 1rem 0px;
+
+      h3 {
+        color: $primary-color-50;
+        font: 300 $size "Rambla Regular";
+      }
+
+      span {
+        color: $neutral-color-30;
+        font: 300 $size-smaller "Rambla Regular";
+      }
+    }
+
+    &--picture {
+      position: absolute;
+      top: 30%;
+      left: 54%;
+      height: 70%;
+      transform: translate(-50%, -49%);
+
+      object-fit: contain;
+    }
+  }
+
+  &__right {
+    width: 75%;
+    height: 90%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 0.7fr 0.3fr 0.5fr;
+
+    &--main {
+      @include flexcenter;
+
+      h1 {
+        font: 600 5rem "Rubik Bold";
+      }
+    }
+
+    &--sub {
+      // @include flexcenter;
+      color: $neutral-color-30;
+
+      h3 {
+        font: 300 $size "Rambla Regular";
+      }
+    }
+
+    &--newsletter {
+    }
   }
 }

@@ -1,0 +1,13 @@
+.btn {
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+
+  &__primary {
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    padding: 2.4rem 3rem;
+    color: $neutral-color-0;
+    font: 300 $size-small "Rambla Regular";
+  }
+}

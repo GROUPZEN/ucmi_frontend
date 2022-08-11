@@ -16,9 +16,12 @@ a:link,
 a:visited {
   text-decoration: none; }
 
-button:focus,
-input:focus {
-  outline: 0; }
+button,
+input {
+  border: 0; }
+  button:focus,
+  input:focus {
+    outline: 0; }
 
 ul,
 li {
@@ -62,6 +65,17 @@ li {
 .primary-linear-background {
   background: linear-gradient(to right bottom, #0540f2, #00b782); }
 
+.btn {
+  padding: 1.5rem 3rem;
+  border-radius: 1rem; }
+  .btn__primary {
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    padding: 2.4rem 3rem;
+    color: #fff;
+    font: 300 2rem "Rambla Regular"; }
+
 .theme {
   display: flex;
   justify-content: center;
@@ -78,6 +92,7 @@ li {
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 2rem; }
   .theme__name {
+    width: 50%;
     grid-area: 1 / 1 / -1 / 2;
     display: flex;
     justify-content: space-evenly;
@@ -96,6 +111,19 @@ li {
   .theme__quotation {
     text-transform: capitalize; }
 
+.input {
+  padding: 2rem 1rem; }
+  .input__newsletter {
+    padding: 2.4rem 3rem;
+    width: 40rem;
+    font: 300 1.8rem "Rambla Regular";
+    border-radius: 0.7rem;
+    box-shadow: rgba(5, 64, 242, 0.1) 0 1rem 3rem 0rem;
+    overflow: hidden; }
+
+.form {
+  position: relative; }
+
 .header {
   max-height: 93rem;
   max-width: 100vw;
@@ -111,11 +139,63 @@ li {
   display: grid;
   grid-template-rows: 80% 20%; }
   .herobox__container {
-    height: 110%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2rem;
+    height: 105%;
     border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; }
+    box-shadow: rgba(47, 96, 244, 0.1) 0px 1rem 2rem 0px; }
+  .herobox__left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .herobox__left--name {
+      position: absolute;
+      bottom: 6%;
+      left: 20%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border-radius: 1rem;
+      padding: 1rem 3rem;
+      text-transform: capitalize;
+      box-shadow: rgba(47, 96, 244, 0.1) 0px 0.5rem 1rem 0px; }
+      .herobox__left--name h3 {
+        color: #0540f2;
+        font: 300 2.4rem "Rambla Regular"; }
+      .herobox__left--name span {
+        color: #aaaaaa;
+        font: 300 1.8rem "Rambla Regular"; }
+    .herobox__left--picture {
+      position: absolute;
+      top: 30%;
+      left: 54%;
+      height: 70%;
+      transform: translate(-50%, -49%);
+      object-fit: contain; }
+  .herobox__right {
+    width: 75%;
+    height: 90%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 0.7fr 0.3fr 0.5fr; }
+    .herobox__right--main {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .herobox__right--main h1 {
+        font: 600 5rem "Rubik Bold"; }
+    .herobox__right--sub {
+      color: #aaaaaa; }
+      .herobox__right--sub h3 {
+        font: 300 2.4rem "Rambla Regular"; }
 
 .nav {
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,10 +205,19 @@ li {
     width: 7rem;
     height: 7rem;
     object-fit: cover; }
-  .nav__name h3 {
-    font: 300 2.4rem "Rubik Regular";
-    color: #0435ca;
-    text-transform: uppercase; }
+  .nav__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .nav__name h3 {
+      font: 300 2.4rem "Rubik Regular";
+      color: #0435ca;
+      text-transform: uppercase; }
+    .nav__name span {
+      color: #808080;
+      font: 300 2rem "Rambla Regular"; }
   .nav__menu {
     font: 300 2.4rem "Rubik Bold";
+    cursor: pointer;
     text-transform: uppercase; }

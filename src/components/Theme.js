@@ -2,7 +2,7 @@ import React from "react";
 
 const Theme = () => {
   return (
-    <div className="theme primary-linear-background">
+    <section className="theme primary-linear-background">
       <div className="theme__container">
         <div className="theme__name secondary-heading">theme</div>
         <div className="theme__title secondary-heading">
@@ -15,7 +15,7 @@ const Theme = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

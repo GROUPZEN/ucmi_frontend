@@ -3,6 +3,8 @@ import React from "react";
 import LogoLarge from "../assets/images/logo-large.png";
 
 const Nav = () => {
+  // console.log(document.querySelector("nav").scrollHeight);
+
   return (
     <nav className="nav">
       <div className="nav__img">
@@ -13,7 +15,8 @@ const Nav = () => {
         />
       </div>
       <div className="nav__name">
-        <h3 className="">united christian ministries international</h3>
+        <h3>united christian ministries international</h3>
+        <span>For the believers in Christ</span>
       </div>
       <div className="nav__menu">
         <span className="primary-linear-heading">menu</span>

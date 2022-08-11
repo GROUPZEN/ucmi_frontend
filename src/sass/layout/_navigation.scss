@@ -1,4 +1,7 @@
 .nav {
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,15 +17,26 @@
   }
 
   &__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     h3 {
       font: 300 2.4rem "Rubik Regular";
       color: $primary-color-60;
       text-transform: uppercase;
     }
+
+    span {
+      color: $neutral-color-40;
+      font: 300 $size-small "Rambla Regular";
+    }
   }
 
   &__menu {
     font: 300 2.4rem "Rubik Bold";
+    cursor: pointer;
     text-transform: uppercase;
   }
 }

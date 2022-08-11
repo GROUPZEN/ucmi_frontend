@@ -1,0 +1,12 @@
+.input {
+  padding: 2rem 1rem;
+
+  &__newsletter {
+    padding: 2.4rem 3rem;
+    width: 40rem;
+    font: 300 $size-smaller "Rambla Regular";
+    border-radius: 0.7rem;
+    box-shadow: rgba($primary-color-50, 0.1) 0 1rem 3rem 0rem;
+    overflow: hidden;
+  }
+}

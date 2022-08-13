@@ -1,0 +1,108 @@
+.about {
+  width: 70%;
+  height: 70rem;
+  margin: 25rem auto;
+  position: relative;
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 8rem;
+
+  &__container {
+    width: 100%;
+    height: 20rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &:nth-child(odd) {
+      color: $primary-color-70;
+      background-color: $primary-color-0;
+    }
+
+    &:nth-child(even) {
+      color: $secondary-color-70;
+      background-color: $secondary-color-0;
+    }
+  }
+
+  &__type {
+    position: absolute;
+    width: 24rem;
+    height: 22rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: $neutral-color-0;
+    text-transform: capitalize;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &--left {
+      background: linear-gradient(
+        to right bottom,
+        $primary-color-50 16%,
+        $neutral-color-0 470%
+      );
+    }
+
+    &--right {
+      background: linear-gradient(
+        to right bottom,
+        $primary-color-50 -363.21%,
+        $secondary-color-50 92.55%
+      );
+    }
+
+    &--1 {
+      z-index: -1;
+      top: -25%;
+      left: -10%;
+    }
+
+    &--2 {
+      z-index: 3;
+      right: -10%;
+      top: 18%;
+    }
+
+    &--3 {
+      top: 60%;
+      left: -10%;
+    }
+  }
+
+  &__message {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font: 300 3rem "Rambla Regular", sans-serif;
+
+    &--quote {
+      font: 300 $size-small "Rambla Regular", sans-serif;
+      color: $neutral-color-60;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+      color: $secondary-color-40;
+      text-decoration: underline;
+      font: 300 $size "Rambla Regular", sans-serif;
+    }
+  }
+}

@@ -31,7 +31,7 @@
   &__info {
     grid-area: 2 / 2 / -1 /-1;
     @include flexeven;
-    font: 300 $size "Rambla Regular";
+    font: 300 $size "Rambla Regular", sans-serif;
   }
 
   &__year {

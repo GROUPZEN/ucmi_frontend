@@ -42,12 +42,12 @@
 
       h3 {
         color: $primary-color-50;
-        font: 300 $size "Rambla Regular";
+        font: 300 $size "Rambla Regular", sans-serif;
       }
 
       span {
         color: $neutral-color-30;
-        font: 300 $size-smaller "Rambla Regular";
+        font: 300 $size-smaller "Rambla Regular", sans-serif;
       }
     }
 
@@ -73,7 +73,7 @@
       @include flexcenter;
 
       h1 {
-        font: 600 5rem "Rubik Bold";
+        font: 600 5rem "Rubik Bold", sans-serif;
       }
     }
 
@@ -82,7 +82,7 @@
       color: $neutral-color-30;
 
       h3 {
-        font: 300 $size "Rambla Regular";
+        font: 300 $size "Rambla Regular", sans-serif;
       }
     }
 

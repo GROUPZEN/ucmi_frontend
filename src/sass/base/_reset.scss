@@ -34,3 +34,13 @@ ul,
 li {
   list-style: none;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 1.5rem;
+  background: $linear-gradient;
+  border-radius: 100px;
+}

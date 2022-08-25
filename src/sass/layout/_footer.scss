@@ -1,0 +1,48 @@
+.footer {
+  height: 80rem;
+  color: $neutral-color-0;
+  display: grid;
+
+  grid-template-rows: 15% 50% 15% 10% 10%;
+
+  &__message {
+    text-align: center;
+    @include flexcenter;
+  }
+
+  &__name {
+    @include flexcenter;
+    text-transform: uppercase;
+
+    h1 {
+      line-height: 474px;
+      letter-spacing: 0.1em;
+      color: transparent;
+      font: 700 40rem "Rubik Bold", sans-serif;
+      stroke-width: 0.3rem;
+      -webkit-text-stroke-width: 0.3rem;
+      -webkit-text-stroke-color: $neutral-color-0;
+    }
+  }
+
+  &__info {
+    width: 60%;
+    margin: 0 auto;
+    @include flexbtn;
+    text-transform: capitalize;
+
+    &--contact {
+      text-align: right;
+    }
+  }
+
+  &__socialmedia {
+    width: 50%;
+    margin: 0 auto;
+    @include flexeven;
+  }
+
+  &__copyright {
+    @include flexcenter;
+  }
+}

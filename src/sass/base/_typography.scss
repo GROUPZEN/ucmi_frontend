@@ -56,3 +56,19 @@
     $secondary-color-50
   );
 }
+
+.big-body-heading {
+  font: 300 $size "Rambla Regular", sans-serif;
+}
+
+.body-heading {
+  font: 300 $size-small "Rambla Regular", sans-serif;
+}
+
+.smaller-heading {
+  font: 300 $size-smaller "Rambla Regular", sans-serif;
+}
+
+.smallest-heading {
+  font: 300 $size-smallest "Rambla Regular", sans-serif;
+}

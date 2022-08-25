@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "name": "Prophetic Service",
+      "image": "../assets/images/flyers/exousia.png",
+      "venueName": "Greater-Works Assembly Church",
+      "venueLocation": "Hansen Avenue - Adenta",
+      "date": 1661405483856
+    },
+    {
+      "name": "Relationship Talk",
+      "image": "../assets/images/flyers/rela-talk.png",
+      "venueName": "Greater-Works Assembly Church",
+      "venueLocation": "Hansen Avenue - Adenta",
+      "date": 1661405483156
+    },
+    {
+      "name": "Sunday Service",
+      "image": "../assets/images/flyers/sunday-temp.png",
+      "venueName": "Greater-Works Assembly Church",
+      "venueLocation": "Hansen Avenue - Adenta",
+      "date": 1661405481156
+    }
+  ]
+}

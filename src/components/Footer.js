@@ -8,7 +8,7 @@ const Footer = () => {
         our premises soon. Feel free to give us a call
       </div>
       <div className="footer__name">
-        <h1>ucmi</h1>
+        <h1 className="stroke-heading">ucmi</h1>
       </div>
       <div className="footer__info">
         <div className="footer__info--location body-heading">

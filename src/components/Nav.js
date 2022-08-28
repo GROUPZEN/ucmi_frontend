@@ -2,7 +2,7 @@ import React from "react";
 
 import LogoLarge from "../assets/images/logo-large.png";
 
-const Nav = () => {
+const Nav = ({ setToggleMenu, toggleMenu }) => {
   // console.log(document.querySelector("nav").scrollHeight);
 
   return (
@@ -18,7 +18,7 @@ const Nav = () => {
         <h3>united christian ministries international</h3>
         <span>For the believers in Christ</span>
       </div>
-      <div className="nav__menu">
+      <div className="nav__menu" onClick={() => setToggleMenu(!toggleMenu)}>
         <span className="primary-linear-heading">menu</span>
       </div>
     </nav>

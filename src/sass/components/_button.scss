@@ -25,4 +25,14 @@
     border-radius: 0;
     font: 300 $size-large "Rambla Regular", sans-serif;
   }
+
+  &__email {
+    width: 30rem;
+    text-transform: capitalize;
+    background: $accent-color-40;
+    color: $neutral-color-60;
+    @include flexeven;
+    padding: 3rem;
+    border-radius: 0.2rem;
+  }
 }

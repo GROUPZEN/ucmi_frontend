@@ -72,3 +72,12 @@
 .smallest-heading {
   font: 300 $size-smallest "Rambla Regular", sans-serif;
 }
+
+.stroke-heading {
+  stroke-width: 0.3rem;
+  -webkit-text-stroke-width: 0.3rem;
+  color: transparent;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke-color: $neutral-color-0;
+  text-transform: uppercase;
+}

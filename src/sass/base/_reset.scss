@@ -14,6 +14,10 @@ body {
   font: 300 $size-smaller "Rambla Regular";
 }
 
+main {
+  position: relative;
+}
+
 a,
 a:link,
 a:visited {
@@ -33,6 +37,10 @@ input {
 ul,
 li {
   list-style: none;
+}
+
+.section-background {
+  background-color: $neutral-color-0;
 }
 
 ::-webkit-scrollbar {

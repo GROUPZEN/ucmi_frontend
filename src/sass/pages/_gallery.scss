@@ -25,4 +25,61 @@
       }
     }
   }
+
+  &__header {
+    height: 30rem;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: rgba($primary-color-70, 0.1) 0px 10px 50px;
+    display: grid;
+    grid-template-rows: 20% 1fr;
+
+    &--title {
+      @include flexcenter;
+
+      h3 {
+        text-transform: capitalize;
+        color: $primary-color-50;
+      }
+    }
+  }
+
+  &__filter {
+    @include flexcenter;
+
+    &--name {
+      flex: 0 0 20%;
+      @include flexcenter;
+      text-transform: capitalize;
+      font: 300 2.5rem "Rambla Regular", sans-serif;
+      color: $neutral-color-40;
+    }
+
+    &--items {
+      flex: 1;
+      @include flexeven;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    &--item {
+      @include flexcenter;
+      text-transform: capitalize;
+      background-color: $primary-color-10;
+      color: $primary-color-90;
+      border-radius: 1rem;
+      cursor: pointer;
+      padding: 2rem 3rem;
+      transition: all 400ms ease-in;
+
+      &-active {
+        background-color: $primary-color-50;
+        color: $neutral-color-0;
+      }
+    }
+  }
+
+  &__images {
+    padding: 10rem 0;
+  }
 }

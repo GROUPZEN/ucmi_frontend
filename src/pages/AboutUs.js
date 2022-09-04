@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import Leader from "../components/Leader";
-import Nav from "../components/Nav";
 import About from "../components/About";
 import Activities from "../components/Activities";
 
-import { ReactComponent as PrevIcon } from "../assets/svg/prev-icon.svg";
-import { ReactComponent as NextIcon } from "../assets/svg/next-icon.svg";
+// import { ReactComponent as PrevIcon } from "../assets/svg/prev-icon.svg";
+// import { ReactComponent as NextIcon } from "../assets/svg/next-icon.svg";
 
 import about from "../api/about.json";
 
@@ -18,6 +17,7 @@ import Sarah from "../assets/images/Ms-Sarah-About.png";
 
 import SundayFlyer from "../assets/images/flyers/sunday-service.png";
 import Footer from "../components/Footer";
+import NavMenu from "../components/NavMenu";
 // import ExousiaFlyer from "../assets/images/flyers/exousia.png";
 
 const AboutUs = () => {
@@ -33,7 +33,7 @@ const AboutUs = () => {
   return (
     <main>
       <div className="section-background">
-        <Nav />
+        <NavMenu />
         <section className="pageheader">
           <figure className="pageheader__image--container pageheader__image--container-about">
             <h4 className="pageheader__image--title secondary-heading">

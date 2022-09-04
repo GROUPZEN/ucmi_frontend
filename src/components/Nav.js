@@ -3,8 +3,6 @@ import React from "react";
 import LogoLarge from "../assets/images/logo-large.png";
 
 const Nav = ({ setToggleMenu, toggleMenu }) => {
-  // console.log(document.querySelector("nav").scrollHeight);
-
   return (
     <nav className="nav">
       <div className="nav__img">

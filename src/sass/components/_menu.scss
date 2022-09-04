@@ -53,6 +53,14 @@
     &--name {
       font: 700 10rem "Rubik Bold", sans-serif;
     }
+
+    &--socials {
+      @include flexeven;
+      width: 30%;
+      position: absolute;
+      bottom: 10%;
+      right: 20%;
+    }
   }
 
   &__quotes {
@@ -80,6 +88,7 @@
     @include flexcenter;
 
     &--btn {
+      cursor: pointer;
     }
   }
 }

@@ -1,6 +1,7 @@
 .btn {
   padding: 1.5rem 3rem;
   border-radius: 1rem;
+  cursor: pointer;
 
   &__primary {
     position: absolute;
@@ -34,5 +35,12 @@
     @include flexeven;
     padding: 3rem;
     border-radius: 0.2rem;
+  }
+
+  &__activity {
+    font: 300 $size "Rambla Bold", sans-serif;
+    color: $neutral-color-0;
+    background: $secondary-color-40;
+    padding: 3rem 4rem;
   }
 }

@@ -21,5 +21,59 @@
       "message": "Continous and steadfast teaching of sound doctrine, fellowshipping with the Holy Spirit, breaking of bread, and prayer",
       "quote": "Ephesians 4:11-13"
     }
+  ],
+  "values": ["love", "faith", "integrity", "excellence", "righteousness"],
+  "leaders": [
+    {
+      "name": "rev. andrews ahene",
+      "position": "lead pastor",
+      "image": "../assets/images/Rev-Andrews-About.png"
+    },
+    {
+      "name": "pst. andrews yiadom",
+      "position": "associate pastor/president of the youth ministry",
+      "image": "../assets/images/Pst-Andy-About.png"
+    },
+    {
+      "name": "mrs. freda ahene",
+      "position": "president of women's ministry",
+      "image": "../assets/images/Ms-Freda-About.png"
+    },
+    {
+      "name": "elder emma cofie",
+      "position": "tresurer/executive member of the women's ministry",
+      "image": "../assets/images/Ms-Emma-About.png"
+    },
+    {
+      "name": "elder sarah alimo",
+      "position": "executive member of the women's ministry",
+      "image": "../assets/images/Ms-Sarah-About.png"
+    }
+  ],
+  "activities": [
+    {
+      "day": "sundays",
+      "timeFrom": "8:30 am",
+      "timeTo": "11:30 am",
+      "link": "#"
+    },
+    {
+      "day": "tuesdays",
+      "timeFrom": "7:00 pm",
+      "timeTo": "8:30 pm",
+      "link": "#"
+    },
+    {
+      "day": "wednesdays",
+      "timeFrom": "6:30 pm",
+      "timeTo": "8:30 pm",
+      "link": "#"
+    },
+    {
+      "day": "fridays",
+      "timeFrom": "6:30 pm",
+      "timeTo": "8:30 pm",
+      "link": "#"
+    }
   ]
 }

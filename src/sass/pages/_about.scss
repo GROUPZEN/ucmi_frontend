@@ -105,4 +105,120 @@
       font: 300 $size "Rambla Regular", sans-serif;
     }
   }
+
+  &__value {
+    width: 30rem;
+    height: 30rem;
+    @include flexcenter;
+    color: $neutral-color-0;
+    background: $secondary-color-10;
+    border-radius: 1rem;
+    text-transform: capitalize;
+    font: 400 $size-large "Rubik Regular", sans-serif;
+    transition: all 300ms ease-in;
+
+    &:hover {
+      transform: translateY(-1rem);
+      background: $primary-color-40;
+    }
+
+    &s {
+      @include flexeven;
+
+      &--container {
+        margin: 15rem 0;
+      }
+    }
+  }
+
+  &__heading {
+    @include flexcenter;
+    margin: 10rem 0;
+
+    &--title {
+      text-transform: capitalize;
+      color: $primary-color-50;
+    }
+  }
+
+  &__leader {
+    &s {
+      &--container {
+        display: grid;
+        grid-gap: 8rem;
+        margin: 15rem 0;
+
+        &-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        &-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    &--item {
+      margin: 0 auto;
+      // width: 60%;
+      height: 90rem;
+      display: grid;
+      grid-template-rows: 1fr repeat(3, 10%);
+    }
+
+    &* {
+      margin: 0 auto;
+      @include flexcenter;
+    }
+
+    &--name {
+      font: 600 $size-large "Rubik Bold", sans-serif;
+      text-transform: capitalize;
+      @include flexcenter;
+      color: $primary-color-50;
+    }
+
+    &--image {
+      @include flexcenter;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--title {
+      font: 300 3.4rem "Rambla Regular", sans-serif;
+      text-transform: capitalize;
+      color: $secondary-color-30;
+      @include flexcenter;
+      text-align: center;
+    }
+
+    &--church {
+      color: $neutral-color-40;
+      font: 300 $size "Rambla Regular", sans-serif;
+      @include flexcenter;
+    }
+  }
+
+  &__groups {
+    // margin: 0 0 80rem 0;
+  }
+}
+
+.groups {
+  // @include flexcenter;
+
+  &__container {
+    &--icon {
+    }
+    &--prev {
+    }
+    &--next {
+    }
+  }
+
+  &__scroller {
+  }
 }

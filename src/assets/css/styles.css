@@ -32,7 +32,10 @@ li {
   list-style: none; }
 
 .section-background {
-  background-color: #fff; }
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+  margin-bottom: 80rem; }
 
 ::-webkit-scrollbar {
   width: 10px; }
@@ -102,7 +105,8 @@ li {
 
 .btn {
   padding: 1.5rem 3rem;
-  border-radius: 1rem; }
+  border-radius: 1rem;
+  cursor: pointer; }
   .btn__primary {
     position: absolute;
     top: 70%;
@@ -131,6 +135,11 @@ li {
     align-items: center;
     padding: 3rem;
     border-radius: 0.2rem; }
+  .btn__activity {
+    font: 300 2.4rem "Rambla Bold", sans-serif;
+    color: #fff;
+    background: #2bc397;
+    padding: 3rem 4rem; }
 
 .events {
   display: flex;
@@ -301,6 +310,14 @@ li {
       left: 20%; }
     .menu__background--name {
       font: 700 10rem "Rubik Bold", sans-serif; }
+    .menu__background--socials {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 30%;
+      position: absolute;
+      bottom: 10%;
+      right: 20%; }
   .menu__quotes {
     position: absolute;
     width: 60rem;
@@ -320,16 +337,18 @@ li {
     display: flex;
     justify-content: center;
     align-items: center; }
+    .menu__close--btn {
+      cursor: pointer; }
 
 .footer {
   height: 80rem;
   color: #fff;
-  display: grid;
-  position: sticky;
-  z-index: -1;
+  position: fixed;
+  z-index: 0;
   left: 0;
   bottom: 0;
   width: 100%;
+  display: grid;
   grid-template-rows: 15% 50% 15% 10% 10%; }
   .footer__message {
     text-align: center;
@@ -353,11 +372,13 @@ li {
     .footer__info--contact {
       text-align: right; }
   .footer__socialmedia {
-    width: 50%;
+    width: 20%;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center; }
+    .footer__socialmedia--icon {
+      cursor: pointer; }
   .footer__copyright {
     display: flex;
     justify-content: center;
@@ -433,6 +454,28 @@ li {
       .herobox__right--sub h3 {
         font: 300 2.4rem "Rambla Regular", sans-serif; }
 
+.pageheader {
+  width: 90%;
+  margin: 0 auto;
+  color: #fff; }
+  .pageheader__image--container {
+    width: 100%;
+    height: 80rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; }
+    .pageheader__image--container-about {
+      background: linear-gradient(to right, rgba(5, 64, 242, 0.8), rgba(0, 183, 130, 0.8)), url("../images/headers/interior.png") no-repeat;
+      background-size: cover; }
+  .pageheader__image--description {
+    height: 50%;
+    width: 60%;
+    text-align: center;
+    font: 400 2.4rem "Rambla Regular", sans-serif; }
+  .pageheader__image--title {
+    text-transform: capitalize; }
+
 .giving {
   height: 70rem;
   margin: 15rem 0;
@@ -476,7 +519,7 @@ li {
   position: sticky;
   left: 0;
   top: 0;
-  height: 10vh;
+  height: 10rem;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -505,6 +548,73 @@ li {
     font: 300 2.4rem "Rubik Bold";
     cursor: pointer;
     text-transform: uppercase; }
+
+.activities {
+  width: 100%;
+  height: 90rem;
+  background: #f3ffa6;
+  display: flex; }
+  .activities__day {
+    font: 300 3rem "Rambla Regular", sans-serif;
+    text-transform: capitalize;
+    color: #808080;
+    background: #fff;
+    width: 20rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer; }
+    .activities__day--active {
+      color: #fff;
+      background: #2bc397; }
+    .activities__days {
+      flex: 0 0 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; }
+  .activities__selected {
+    flex: 1;
+    display: flex; }
+    .activities__selected--image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 62%;
+      overflow: hidden; }
+      .activities__selected--image img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 80%;
+        object-fit: contain; }
+    .activities__selected--detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+      text-transform: capitalize; }
+      .activities__selected--detail:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .activities__selected--detail-key {
+        font: 300 3rem "Rambla Regular", sans-serif;
+        color: #808080; }
+      .activities__selected--detail-value {
+        font: 700 3rem "Rambla Bold", sans-serif;
+        color: #00b782; }
+      .activities__selected--details {
+        margin: auto;
+        flex: 1;
+        width: 90%;
+        height: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column; }
 
 .about {
   width: 70%;
@@ -577,10 +687,85 @@ li {
       color: #2bc397;
       text-decoration: underline;
       font: 300 2.4rem "Rambla Regular", sans-serif; }
+  .about__value {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #aae7d5;
+    border-radius: 1rem;
+    text-transform: capitalize;
+    font: 400 3.6rem "Rubik Regular", sans-serif;
+    transition: all 300ms ease-in; }
+    .about__value:hover {
+      transform: translateY(-1rem);
+      background: #2f60f4; }
+    .about__values {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center; }
+      .about__values--container {
+        margin: 15rem 0; }
+  .about__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0; }
+    .about__heading--title {
+      text-transform: capitalize;
+      color: #0540f2; }
+  .about__leaders--container {
+    display: grid;
+    grid-gap: 8rem;
+    margin: 15rem 0; }
+    .about__leaders--container-2 {
+      grid-template-columns: repeat(2, 1fr); }
+    .about__leaders--container-3 {
+      grid-template-columns: repeat(3, 1fr); }
+  .about__leader--item {
+    margin: 0 auto;
+    height: 90rem;
+    display: grid;
+    grid-template-rows: 1fr repeat(3, 10%); }
+  .about__leader* {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .about__leader--name {
+    font: 600 3.6rem "Rubik Bold", sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0540f2; }
+  .about__leader--image {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .about__leader--image img {
+      height: 100%;
+      object-fit: cover; }
+  .about__leader--title {
+    font: 300 3.4rem "Rambla Regular", sans-serif;
+    text-transform: capitalize;
+    color: #55cfac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+  .about__leader--church {
+    color: #808080;
+    font: 300 2.4rem "Rambla Regular", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .gallery {
   padding: 10rem 20rem;
-  margin: 10rem 0; }
+  margin: 10rem 0 0 0; }
   .gallery__title {
     width: 90%;
     margin: 0 auto;

@@ -1,13 +1,12 @@
 .footer {
   height: 80rem;
   color: $neutral-color-0;
-  display: grid;
-  position: sticky;
-  z-index: -1;
+  position: fixed;
+  z-index: 0;
   left: 0;
   bottom: 0;
   width: 100%;
-
+  display: grid;
   grid-template-rows: 15% 50% 15% 10% 10%;
 
   &__message {
@@ -36,9 +35,13 @@
   }
 
   &__socialmedia {
-    width: 50%;
+    width: 20%;
     margin: 0 auto;
     @include flexeven;
+
+    &--icon {
+      cursor: pointer;
+    }
   }
 
   &__copyright {

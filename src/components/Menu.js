@@ -1,25 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
+import { ReactComponent as CloseIcon } from "../assets/svg/Close-icon.svg";
+import { ReactComponent as Instagram } from "../assets/svg/Instagram-icon.svg";
+import { ReactComponent as WhatsApp } from "../assets/svg/Whatsapp-icon.svg";
+import { ReactComponent as Facebook } from "../assets/svg/Facebook-icon.svg";
+import Email from "../assets/svg/EmailIcon";
+import { ReactComponent as Youtube } from "../assets/svg/Youtube-icon.svg";
+
 const Menu = ({ setToggleMenu, toggleMenu }) => {
-  const rootEle = document.querySelector("#root");
-
-  const disableScolling = () => {
-    rootEle.style.maxHeight = "100vh";
-    rootEle.style.height = "100vh";
-    rootEle.style.overflow = "hidden";
-  };
-
-  const enableScrolling = () => {
-    rootEle.style.maxHeight = "";
-    rootEle.style.height = "";
-    rootEle.style.overflow = "show";
-  };
-
-  useEffect(() => {
-    toggleMenu ? disableScolling() : enableScrolling();
-  }, [toggleMenu]);
-
   return (
     <div className="menu">
       <div className="menu__links">
@@ -27,18 +16,12 @@ const Menu = ({ setToggleMenu, toggleMenu }) => {
           <li className="menu__link--item">
             <Link to="/">home</Link>
           </li>
-        </ul>
-        <ul className="menu__link">
           <li className="menu__link--item">
             <Link to="/about">about</Link>
           </li>
-        </ul>
-        <ul className="menu__link">
           <li className="menu__link--item">
             <Link to="/gallery">gallery</Link>
           </li>
-        </ul>
-        <ul className="menu__link">
           <li className="menu__link--item">
             <Link to="/contact">contact us</Link>
           </li>
@@ -61,16 +44,57 @@ const Menu = ({ setToggleMenu, toggleMenu }) => {
         </div>
         <div className="menu__background">
           <div className="menu__background--btn">
-            <button className="btn btn__email big-body-heading">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:greaterworks.ucmi@gmail.com"
+              className="footer__socialmedia--icon btn btn__email big-body-heading"
+            >
               email us
-            </button>
+              <Email color="#28303F" width={30} height={30} />
+            </a>
           </div>
           <div className="menu__background--name stroke-heading">ucmi</div>
-          <div className="menu__background--socials"></div>
+          <div className="menu__background--socials">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://web.facebook.com/groups/215346773125400"
+              className="footer__socialmedia--icon"
+            >
+              <Facebook width={30} height={30} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/ucmi.ghana/"
+              target="_blank"
+              rel="noreferrer"
+              className="footer__socialmedia--icon"
+            >
+              <Instagram width={30} height={30} />
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.youtube.com/channel/UCMrp5wXdwz4_b2i0hlFewsQ"
+              className="footer__socialmedia--icon"
+            >
+              <Youtube width={30} height={30} />
+            </a>
+
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://wa.me/grouplink"
+              className="footer__socialmedia--icon"
+            >
+              <WhatsApp width={30} height={30} />
+            </a>
+          </div>
         </div>
       </div>
       <div className="menu__close" onClick={() => setToggleMenu(!toggleMenu)}>
-        <button className="menu__close--btn">cls</button>
+        <CloseIcon className="menu__close--btn" width={24} height={24} />
       </div>
     </div>
   );

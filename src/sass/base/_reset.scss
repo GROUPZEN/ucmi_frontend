@@ -40,7 +40,10 @@ li {
 }
 
 .section-background {
+  position: relative;
+  z-index: 5;
   background-color: $neutral-color-0;
+  margin-bottom: 80rem;
 }
 
 ::-webkit-scrollbar {

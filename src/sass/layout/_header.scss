@@ -113,6 +113,16 @@
           url("../images/headers/interior.png") no-repeat;
         background-size: cover;
       }
+
+      &-contact {
+        background: linear-gradient(
+            to right,
+            rgba($primary-color-50, 0.8),
+            rgba($secondary-color-50, 0.8)
+          ),
+          url("../images/headers/praying.png") no-repeat;
+        background-size: cover;
+      }
     }
 
     &--description {

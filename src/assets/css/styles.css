@@ -468,6 +468,9 @@ li {
     .pageheader__image--container-about {
       background: linear-gradient(to right, rgba(5, 64, 242, 0.8), rgba(0, 183, 130, 0.8)), url("../images/headers/interior.png") no-repeat;
       background-size: cover; }
+    .pageheader__image--container-contact {
+      background: linear-gradient(to right, rgba(5, 64, 242, 0.8), rgba(0, 183, 130, 0.8)), url("../images/headers/praying.png") no-repeat;
+      background-size: cover; }
   .pageheader__image--description {
     height: 50%;
     width: 60%;

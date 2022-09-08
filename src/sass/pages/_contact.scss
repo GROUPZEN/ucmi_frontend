@@ -1,39 +1,129 @@
-.contactus {
+.contact {
   &__newsletter {
+    display: flex;
+    width: 80%;
+    height: 50rem;
+    margin: 0 auto;
+
     &--text {
+      flex: 0 0 40%;
+      @include flexcenter;
+
+      h4 {
+        width: 85%;
+        font: 300 4.6rem "Rambla Regular", sans-serif;
+        text-align: center;
+        color: $primary-color-40;
+      }
     }
+
     &--form {
+      flex: 1;
+      @include flexcenter;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
-    &--container {
-    }
+
     &--input {
+      cursor: auto;
+      font: 300 $size-small "Rambla Regular", sans-serif;
+      box-shadow: 0 1rem 3rem rgba($primary-color-50, 0.1);
+      width: 80%;
+      padding: 3rem;
     }
+
     &--button {
+      font: 300 $size-small "Rambla Regular", sans-serif;
+      padding: 3rem 5rem;
+      background: $linear-gradient;
+      color: $neutral-color-0;
+      border-radius: 1rem;
     }
   }
 
   &__map {
+    width: 100%;
+    height: 70rem;
+
     iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   }
 
   &__contact {
-    &--groups {
-      label {
-      }
-      input {
-      }
-      select {
-        option {
-        }
-      }
-      textarea {
-      }
-    }
+    width: 80%;
+    margin: 0 auto;
+    height: 80rem;
+    display: flex;
   }
 
   &__form {
+    flex: 0 0 60%;
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+
+    &--groups {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 40%;
+      margin: 0 auto;
+
+      label {
+        text-transform: capitalize;
+        font: 300 $size-small "Rambla Regular", sans-serif;
+      }
+
+      input {
+        cursor: auto;
+        border: 2px solid rgba($primary-color-50, 0.3);
+        border-radius: 0.6rem;
+        font: 300 $size-small "Rambla Regular", sans-serif;
+        padding: 2rem 4rem;
+
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+        }
+      }
+
+      select {
+        font: 300 $size-small "Rambla Regular", sans-serif;
+        border: 2px solid rgba($primary-color-50, 0.3);
+        padding: 2rem;
+        text-transform: capitalize;
+
+        &:focus,
+        &:active {
+          outline: 0;
+        }
+
+        option {
+          text-transform: capitalize;
+        }
+      }
+      textarea {
+        border: 2px solid rgba($primary-color-50, 0.3);
+        border-radius: 0.6rem;
+        font: 300 $size-small "Rambla Regular", sans-serif;
+        padding: 1rem;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
     &--message {
+      @include flexcenter;
+      flex: 1;
+      color: $secondary-color-50;
+      width: 85%;
+      font: 300 4.6rem "Rambla Regular", sans-serif;
+      text-align: center;
     }
   }
 }

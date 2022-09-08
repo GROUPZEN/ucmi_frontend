@@ -27,17 +27,15 @@ const ContactUs = () => {
             </h4>
           </div>
           <form className="contact__newsletter--form">
-            <div className="contact__newsletter--container">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="enter email address"
-                className="contact__newsletter--input"
-              />
-            </div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter email address"
+              className="contact__newsletter--input"
+            />
             <button type="submit" className="contact__newsletter--button">
-              join our newsletter
+              Join our newsletter
             </button>
           </form>
         </section>
@@ -50,10 +48,19 @@ const ContactUs = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </section>
-        <section className="contactus__contact">
-          <div className="contactus__form">
-            <div className="contactus__form--groups">
-              <label htmlFor="email"> email address</label>
+        <section className="contact__contact">
+          <form className="contact__form">
+            <div className="contact__form--groups">
+              <label htmlFor="fullName">full name</label>
+              <input
+                type="text"
+                name="fullName"
+                id="fullname"
+                placeholder="eg. John Doe"
+              />
+            </div>
+            <div className="contact__form--groups">
+              <label htmlFor="email">email address</label>
               <input
                 type="email"
                 name="email"
@@ -61,34 +68,40 @@ const ContactUs = () => {
                 placeholder="eg. johndoe@gmail.com"
               />
             </div>
-            <div className="contactus__form--groups">
+            <div className="contact__form--groups">
               <label htmlFor="phone">phone number</label>
               <input
                 type="number"
                 name="phone"
                 id="phone"
-                placeholder="e. 03000000000"
+                placeholder="eg. 03000000000"
               />
             </div>
-            <div className="contactus__form--groups">
-              <label htmlFor="formType"></label>
+            <div className="contact__form--groups">
+              <label htmlFor="formType">form type</label>
               <select name="formType" id="form-type">
                 <option>choose why you filling the form</option>
                 <option value="enquires">enquires</option>
                 <option value="appointment">appointment</option>
               </select>
             </div>
-            <div className="contactus__form--groups">
+            <div className="contact__form--groups">
               <label htmlFor="message">additional message</label>
               <textarea
+                placeholder="Type your message here."
                 name="message"
                 id="message"
-                cols="30"
-                rows="15"
+                cols="20"
+                rows="5"
               ></textarea>
             </div>
-          </div>
-          <div className="contactus__form--message">
+            <div className="contact__form--groups">
+              <button type="submit" className="contact__newsletter--button">
+                Submit form
+              </button>
+            </div>
+          </form>
+          <div className="contact__form--message">
             <h4>
               You can also reach out to us for any information. We’ll be happy
               to hear from you. You can also book appointments with our leaders

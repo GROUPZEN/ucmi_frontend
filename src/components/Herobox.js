@@ -3,7 +3,7 @@ import Theme from "./Theme";
 
 import HeroHolder from "../assets/svg/hero_holder.svg";
 import HeroPicture from "../assets/images/Rev-Andrews-Home.png";
-import { sendNewsletter } from "../api";
+// import { sendNewsletter } from "../api";
 
 const Herobox = () => {
   const newsletterBtn = useRef();

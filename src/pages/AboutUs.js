@@ -61,8 +61,10 @@ const AboutUs = () => {
             </h3>
           </div>
           <div className="about__values">
-            {values?.map((value) => (
-              <div className="about__value">{value}</div>
+            {values?.map((value, index) => (
+              <div key={index} className="about__value">
+                {value}
+              </div>
             ))}
           </div>
         </section>

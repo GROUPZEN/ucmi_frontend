@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Theme from "./Theme";
 
 import HeroHolder from "../assets/svg/hero_holder.svg";
 import HeroPicture from "../assets/images/Rev-Andrews-Home.png";
+import { sendNewsletter } from "../api";
 
 const Herobox = () => {
+  const newsletterBtn = useRef();
+
+  const handleSubmitNewsletter = (e) => {
+    e.preventDefault();
+
+    sendNewsletter(e.target.firstChild.value)
+      .then((response) => console.log(response.data))
+      .catch((err) => console.log(err.code, err.message));
+
+    // newsletterBtn.current.innerHTML = "Thanks for subscribing";
+
+    // e.target.reset();
+  };
+
   return (
     <div className="herobox">
       <div className="herobox__container">
@@ -36,17 +51,23 @@ const Herobox = () => {
             </h3>
           </div>
           <div className="herobox__right--newsletter">
-            <form id="form-newsletter" className="form" action="#">
+            <form
+              onSubmit={handleSubmitNewsletter}
+              id="form-newsletter"
+              className="form"
+            >
               <input
                 placeholder="Enter email address"
                 className="input input__newsletter"
                 type="email"
                 name="email"
                 id="email"
+                required
               />
               <button
                 className="btn btn__primary primary-linear-background"
                 type="submit"
+                ref={newsletterBtn}
               >
                 Join our newsletter
               </button>

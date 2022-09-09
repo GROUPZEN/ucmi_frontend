@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Footer from "../components/Footer";
 import NavMenu from "../components/NavMenu";
 
 const ContactUs = () => {
+  const newsletterBtn = useRef();
+  const formBtn = useRef();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    formBtn.current.innerHTML = "Form submitted";
+    e.target.reset();
+  };
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+
+    newsletterBtn.current.innerHTML = "Thanks for subscribing";
+
+    e.target.reset();
+  };
+
   return (
     <main>
       <NavMenu />
@@ -26,15 +43,23 @@ const ContactUs = () => {
               help you with your Christian life.
             </h4>
           </div>
-          <form className="contact__newsletter--form">
+          <form
+            onSubmit={handleNewsletterSubmit}
+            className="contact__newsletter--form"
+          >
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Enter email address"
               className="contact__newsletter--input"
+              required
             />
-            <button type="submit" className="contact__newsletter--button">
+            <button
+              ref={newsletterBtn}
+              type="submit"
+              className="contact__newsletter--button"
+            >
               Join our newsletter
             </button>
           </form>
@@ -49,10 +74,11 @@ const ContactUs = () => {
           ></iframe>
         </section>
         <section className="contact__contact">
-          <form className="contact__form">
+          <form onSubmit={handleFormSubmit} className="contact__form">
             <div className="contact__form--groups">
               <label htmlFor="fullName">full name</label>
               <input
+                required
                 type="text"
                 name="fullName"
                 id="fullname"
@@ -62,6 +88,7 @@ const ContactUs = () => {
             <div className="contact__form--groups">
               <label htmlFor="email">email address</label>
               <input
+                required
                 type="email"
                 name="email"
                 id="emailaddress"
@@ -71,6 +98,7 @@ const ContactUs = () => {
             <div className="contact__form--groups">
               <label htmlFor="phone">phone number</label>
               <input
+                required
                 type="number"
                 name="phone"
                 id="phone"
@@ -79,7 +107,7 @@ const ContactUs = () => {
             </div>
             <div className="contact__form--groups">
               <label htmlFor="formType">form type</label>
-              <select name="formType" id="form-type">
+              <select required name="formType" id="form-type">
                 <option>choose why you filling the form</option>
                 <option value="enquires">enquires</option>
                 <option value="appointment">appointment</option>
@@ -96,7 +124,11 @@ const ContactUs = () => {
               ></textarea>
             </div>
             <div className="contact__form--groups">
-              <button type="submit" className="contact__newsletter--button">
+              <button
+                ref={formBtn}
+                type="submit"
+                className="contact__newsletter--button"
+              >
                 Submit form
               </button>
             </div>
@@ -104,7 +136,7 @@ const ContactUs = () => {
           <div className="contact__form--message">
             <h4>
               You can also reach out to us for any information. We’ll be happy
-              to hear from you. You can also book appointments with our leaders
+              to hear from you. You can also book appointments with our leaders.
             </h4>
           </div>
         </section>

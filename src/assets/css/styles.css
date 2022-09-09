@@ -105,7 +105,7 @@ li {
 
 .btn {
   padding: 1.5rem 3rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer; }
   .btn__primary {
     position: absolute;
@@ -265,7 +265,12 @@ li {
     font: 300 1.8rem "Rambla Regular", sans-serif;
     border-radius: 0.7rem;
     box-shadow: rgba(5, 64, 242, 0.1) 0 1rem 3rem 0rem;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: auto;
+    border: 2px solid transparent;
+    transition: all 500ms ease-in-out; }
+    .input__newsletter:active, .input__newsletter:focus {
+      border: 2px solid #55cfac; }
 
 .menu {
   position: fixed;
@@ -531,6 +536,8 @@ li {
   margin: 0 auto;
   padding: 0 10rem;
   background-color: #fff; }
+  .nav-scrolled {
+    box-shadow: rgba(128, 128, 128, 0.1) 0px 4px 6px -1px, rgba(128, 128, 128, 0.06) 0px 2px 4px -1px; }
   .nav__img--file {
     width: 7rem;
     height: 7rem;
@@ -793,17 +800,27 @@ li {
     font: 300 2rem "Rambla Regular", sans-serif;
     box-shadow: 0 1rem 3rem rgba(5, 64, 242, 0.1);
     width: 80%;
-    padding: 3rem; }
+    padding: 3rem;
+    transition: all 400ms ease-in-out;
+    border: 2px solid transparent; }
+    .contact__newsletter--input:focus {
+      outline: 0;
+      border: 2px solid rgba(5, 64, 242, 0.3); }
   .contact__newsletter--button {
     font: 300 2rem "Rambla Regular", sans-serif;
     padding: 3rem 5rem;
     background: linear-gradient(to right bottom, #0540f2, #00b782);
     color: #fff;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    transition: all 400ms ease-in-out;
+    box-shadow: rgba(5, 64, 242, 0.1) 0px 4px 6px -1px, rgba(5, 64, 242, 0.06) 0px 2px 4px -1px; }
+    .contact__newsletter--button:hover {
+      transform: translateY(-1rem) scale(1.02);
+      box-shadow: rgba(5, 64, 242, 0.1) 0px 20px 25px -5px, rgba(5, 64, 242, 0.04) 0px 10px 10px -5px; }
 
 .contact__map {
   width: 100%;
-  height: 70rem; }
+  height: 80rem; }
   .contact__map iframe {
     width: 100%;
     height: 100%;
@@ -811,7 +828,7 @@ li {
 
 .contact__contact {
   width: 80%;
-  margin: 0 auto;
+  margin: 10rem auto;
   height: 80rem;
   display: flex; }
 
@@ -828,31 +845,50 @@ li {
     margin: 0 auto; }
     .contact__form--groups label {
       text-transform: capitalize;
-      font: 300 2rem "Rambla Regular", sans-serif; }
+      font: 300 2rem "Rambla Regular", sans-serif;
+      color: #808080; }
     .contact__form--groups input {
       cursor: auto;
-      border: 2px solid rgba(5, 64, 242, 0.3);
+      border: 2px solid rgba(5, 64, 242, 0.1);
       border-radius: 0.6rem;
       font: 300 2rem "Rambla Regular", sans-serif;
-      padding: 2rem 4rem; }
+      color: #2b2b2b;
+      padding: 2rem 4rem;
+      transition: all 400ms ease-in-out; }
+      .contact__form--groups input::placeholder {
+        color: #aaaaaa; }
+      .contact__form--groups input:focus {
+        border: 2px solid rgba(5, 64, 242, 0.3); }
       .contact__form--groups input[type="number"]::-webkit-inner-spin-button, .contact__form--groups input[type="number"]::-webkit-outer-spin-button {
         -webkit-appearance: none; }
     .contact__form--groups select {
       font: 300 2rem "Rambla Regular", sans-serif;
-      border: 2px solid rgba(5, 64, 242, 0.3);
+      color: #2b2b2b;
+      border: 2px solid rgba(5, 64, 242, 0.1);
       padding: 2rem;
+      transition: all 400ms ease-in-out;
       text-transform: capitalize; }
+      .contact__form--groups select::placeholder {
+        color: #aaaaaa; }
       .contact__form--groups select:focus, .contact__form--groups select:active {
+        border: 2px solid rgba(5, 64, 242, 0.3);
         outline: 0; }
       .contact__form--groups select option {
-        text-transform: capitalize; }
+        text-transform: capitalize;
+        padding: 1rem;
+        border-radius: 0; }
     .contact__form--groups textarea {
-      border: 2px solid rgba(5, 64, 242, 0.3);
+      border: 2px solid rgba(5, 64, 242, 0.1);
       border-radius: 0.6rem;
       font: 300 2rem "Rambla Regular", sans-serif;
-      padding: 1rem; }
+      color: #2b2b2b;
+      padding: 1rem;
+      transition: all 400ms ease-in-out; }
+      .contact__form--groups textarea::placeholder {
+        color: #aaaaaa; }
       .contact__form--groups textarea:focus {
-        outline: 0; }
+        outline: 0;
+        border: 2px solid rgba(5, 64, 242, 0.3); }
   .contact__form--message {
     display: flex;
     justify-content: center;

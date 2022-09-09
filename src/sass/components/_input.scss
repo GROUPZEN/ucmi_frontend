@@ -8,5 +8,13 @@
     border-radius: 0.7rem;
     box-shadow: rgba($primary-color-50, 0.1) 0 1rem 3rem 0rem;
     overflow: hidden;
+    cursor: auto;
+    border: 2px solid transparent;
+    transition: all 500ms ease-in-out;
+
+    &:active,
+    &:focus {
+      border: 2px solid $secondary-color-30;
+    }
   }
 }

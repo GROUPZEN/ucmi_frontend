@@ -1,4 +1,5 @@
 import React from "react";
+import { getMonthInWords } from "../utils/Helpers";
 import EventHolder from "./EventHolder";
 
 const Events = () => {
@@ -10,7 +11,7 @@ const Events = () => {
             upcoming events
           </div>
           <div className="events__nav--date">
-            <span>september</span>
+            <span>{getMonthInWords()}</span>
           </div>
         </div>
         <EventHolder />

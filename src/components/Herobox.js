@@ -1,24 +1,26 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Theme from "./Theme";
 
 import HeroHolder from "../assets/svg/hero_holder.svg";
 import HeroPicture from "../assets/images/Rev-Andrews-Home.png";
-// import { sendNewsletter } from "../api";
+import { sendNewsletter } from "../api";
 
 const Herobox = () => {
+  const [newsletterStatus, setNewsletterStatus] = useState(false);
   const newsletterBtn = useRef();
 
   const handleSubmitNewsletter = (e) => {
     e.preventDefault();
 
-    // sendNewsletter(e.target.firstChild.value)
-    //   .then((response) => console.log(response.data))
-    //   .catch((err) => console.log(err.code, err.message));
+    sendNewsletter(e.target.firstChild.value)
+      .then(() => {
+        newsletterBtn.current.innerHTML = "Thanks for subscribing";
 
-    setTimeout(() => {
-      newsletterBtn.current.innerHTML = "Thanks for subscribing";
-      e.target.reset();
-    }, 2000);
+        e.target.classList.add("contact__newsletter--form-disappear");
+
+        setTimeout(() => setNewsletterStatus(true), 1100);
+      })
+      .catch((err) => console.log(err.code, err.message));
   };
 
   return (
@@ -52,27 +54,36 @@ const Herobox = () => {
             </h3>
           </div>
           <div className="herobox__right--newsletter">
-            <form
-              onSubmit={handleSubmitNewsletter}
-              id="form-newsletter"
-              className="form"
-            >
-              <input
-                placeholder="Enter email address"
-                className="input input__newsletter"
-                type="email"
-                name="email"
-                id="email"
-                required
-              />
-              <button
-                className="btn btn__primary primary-linear-background"
-                type="submit"
-                ref={newsletterBtn}
+            {newsletterStatus ? (
+              <div className="contact__newsletter--confirm">
+                <h5>
+                  Please check your email to comfirm subscription for our
+                  newsletter. Thank you!😊
+                </h5>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmitNewsletter}
+                id="form-newsletter"
+                className="form"
               >
-                Join our newsletter
-              </button>
-            </form>
+                <input
+                  placeholder="Enter email address"
+                  className="input input__newsletter"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <button
+                  className="btn btn__primary primary-linear-background"
+                  type="submit"
+                  ref={newsletterBtn}
+                >
+                  Join our newsletter
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

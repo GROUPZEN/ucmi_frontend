@@ -1,23 +1,45 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { sendFormData, sendNewsletter } from "../api";
 import Footer from "../components/Footer";
 import NavMenu from "../components/NavMenu";
 
 const ContactUs = () => {
   const newsletterBtn = useRef();
   const formBtn = useRef();
+  const [newsletterStatus, setNewsletterStatus] = useState(false);
 
   const handleFormSubmit = (e) => {
+    const formData = new FormData();
     e.preventDefault();
-    formBtn.current.innerHTML = "Form submitted";
-    e.target.reset();
+
+    formData.append("fullname", e.target.elements[0].value);
+    formData.append("emailaddress", e.target.elements[1].value);
+    formData.append("phonenumber", e.target.elements[2].value);
+    formData.append("formtype", e.target.elements[3].value);
+    formData.append("message", e.target.elements[4].value);
+
+    sendFormData(formData)
+      .then(() => {
+        formBtn.current.innerHTML = "Form submitted";
+        setTimeout(() => {
+          formBtn.current.innerHTML = "Submit form";
+        }, 2000);
+      })
+      .catch((err) => console.log(err.code, err.message));
   };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
 
-    newsletterBtn.current.innerHTML = "Thanks for subscribing";
+    sendNewsletter(e.target.firstChild.value)
+      .then(() => {
+        newsletterBtn.current.innerHTML = "Thanks for subscribing";
 
-    e.target.reset();
+        e.target.classList.add("contact__newsletter--form-disappear");
+
+        setTimeout(() => setNewsletterStatus(true), 1100);
+      })
+      .catch((err) => console.log(err.code, err.message));
   };
 
   return (
@@ -43,26 +65,35 @@ const ContactUs = () => {
               help you with your Christian life.
             </h4>
           </div>
-          <form
-            onSubmit={handleNewsletterSubmit}
-            className="contact__newsletter--form"
-          >
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter email address"
-              className="contact__newsletter--input"
-              required
-            />
-            <button
-              ref={newsletterBtn}
-              type="submit"
-              className="contact__newsletter--button"
+          {newsletterStatus ? (
+            <div className="contact__newsletter--confirm">
+              <h5>
+                Please check your email to comfirm subscription for our
+                newsletter. Thank you!😊
+              </h5>
+            </div>
+          ) : (
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="contact__newsletter--form"
             >
-              Join our newsletter
-            </button>
-          </form>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter email address"
+                className="contact__newsletter--input"
+                required
+              />
+              <button
+                ref={newsletterBtn}
+                type="submit"
+                className="contact__newsletter--button"
+              >
+                Join our newsletter
+              </button>
+            </form>
+          )}
         </section>
         <section className="contact__map">
           <iframe
@@ -92,6 +123,7 @@ const ContactUs = () => {
                 type="email"
                 name="email"
                 id="emailaddress"
+                // pattern=".+@."
                 placeholder="eg. johndoe@gmail.com"
               />
             </div>
@@ -99,7 +131,8 @@ const ContactUs = () => {
               <label htmlFor="phone">phone number</label>
               <input
                 required
-                type="number"
+                type="tel"
+                pattern="[0-9]{10}"
                 name="phone"
                 id="phone"
                 placeholder="eg. 03000000000"
@@ -107,7 +140,7 @@ const ContactUs = () => {
             </div>
             <div className="contact__form--groups">
               <label htmlFor="formType">form type</label>
-              <select required name="formType" id="form-type">
+              <select required name="formType" id="formType">
                 <option>choose why you filling the form</option>
                 <option value="enquires">enquires</option>
                 <option value="appointment">appointment</option>

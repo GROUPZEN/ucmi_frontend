@@ -1,3 +1,17 @@
+@keyframes disappear {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes menu {
+  from {
+    opacity: 0;
+    transform: translateY(-100rem); }
+  to {
+    opacity: 1;
+    transform: translate(0); } }
+
 *,
 *::before,
 *::after {
@@ -281,7 +295,13 @@ li {
   height: 98rem;
   background-color: #0540f2;
   z-index: 1000;
-  color: #fff; }
+  color: #fff;
+  transform: translateY(-100rem);
+  opacity: 0; }
+  .menu-active {
+    transform: translateY(0);
+    opacity: 1;
+    animation: menu 800ms ease-in-out alternate; }
   .menu__links {
     flex: 0 0 20%;
     display: flex;
@@ -778,6 +798,16 @@ li {
   width: 80%;
   height: 50rem;
   margin: 0 auto; }
+  .contact__newsletter--confirm {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .contact__newsletter--confirm h5 {
+      width: 85%;
+      font: 300 3.6rem "Rambla Regular", sans-serif;
+      text-align: center;
+      color: #00b782; }
   .contact__newsletter--text {
     flex: 0 0 40%;
     display: flex;
@@ -794,18 +824,21 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    opacity: 1; }
+    .contact__newsletter--form-disappear {
+      animation: disappear 1s ease-in-out 200ms backwards alternate; }
   .contact__newsletter--input {
     cursor: auto;
     font: 300 2rem "Rambla Regular", sans-serif;
-    box-shadow: 0 1rem 3rem rgba(5, 64, 242, 0.1);
+    box-shadow: 0 1rem 3rem rgba(0, 183, 130, 0.1);
     width: 80%;
     padding: 3rem;
     transition: all 400ms ease-in-out;
     border: 2px solid transparent; }
     .contact__newsletter--input:focus {
       outline: 0;
-      border: 2px solid rgba(5, 64, 242, 0.3); }
+      border: 2px solid rgba(0, 183, 130, 0.3); }
   .contact__newsletter--button {
     font: 300 2rem "Rambla Regular", sans-serif;
     padding: 3rem 5rem;

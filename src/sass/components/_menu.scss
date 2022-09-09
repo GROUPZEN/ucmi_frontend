@@ -8,6 +8,14 @@
   background-color: $primary-color-50;
   z-index: 1000;
   color: $neutral-color-0;
+  transform: translateY(-100rem);
+  opacity: 0;
+
+  &-active {
+    transform: translateY(0);
+    opacity: 1;
+    animation: menu 800ms ease-in-out alternate;
+  }
 
   &__links {
     flex: 0 0 20%;

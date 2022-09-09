@@ -1,0 +1,20 @@
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes menu {
+  from {
+    opacity: 0;
+    transform: translateY(-100rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

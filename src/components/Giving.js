@@ -15,7 +15,7 @@ const Giving = () => {
           <span>0244000000 / 0244000001</span>
         </div>
         <div className="giving__details--info">
-          <span>Pay with flutterwave online with mobile money or card</span>
+          <span>Pay with paystack online with mobile money or card</span>
         </div>
         <div className="giving__details--button">
           <button className="btn btn__pay">Pay online</button>

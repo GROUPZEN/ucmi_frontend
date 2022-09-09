@@ -5,6 +5,18 @@
     height: 50rem;
     margin: 0 auto;
 
+    &--confirm {
+      flex: 1;
+      @include flexcenter;
+
+      h5 {
+        width: 85%;
+        font: 300 $size-large "Rambla Regular", sans-serif;
+        text-align: center;
+        color: $secondary-color-50;
+      }
+    }
+
     &--text {
       flex: 0 0 40%;
       @include flexcenter;
@@ -22,12 +34,17 @@
       @include flexcenter;
       flex-direction: column;
       justify-content: space-evenly;
+      opacity: 1;
+
+      &-disappear {
+        animation: disappear 1s ease-in-out 200ms backwards alternate;
+      }
     }
 
     &--input {
       cursor: auto;
       font: 300 $size-small "Rambla Regular", sans-serif;
-      box-shadow: 0 1rem 3rem rgba($primary-color-50, 0.1);
+      box-shadow: 0 1rem 3rem rgba($secondary-color-50, 0.1);
       width: 80%;
       padding: 3rem;
       transition: all 400ms ease-in-out;
@@ -35,7 +52,7 @@
 
       &:focus {
         outline: 0;
-        border: 2px solid rgba($primary-color-50, 0.3);
+        border: 2px solid rgba($secondary-color-50, 0.3);
       }
     }
 

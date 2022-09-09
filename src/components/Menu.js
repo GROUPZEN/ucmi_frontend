@@ -10,7 +10,7 @@ import { ReactComponent as Youtube } from "../assets/svg/Youtube-icon.svg";
 
 const Menu = ({ setToggleMenu, toggleMenu }) => {
   return (
-    <div className="menu">
+    <div className={toggleMenu ? `menu menu-active` : "menu"}>
       <div className="menu__links">
         <ul className="menu__link">
           <li className="menu__link--item">

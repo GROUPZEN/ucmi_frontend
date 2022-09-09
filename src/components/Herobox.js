@@ -11,13 +11,14 @@ const Herobox = () => {
   const handleSubmitNewsletter = (e) => {
     e.preventDefault();
 
-    sendNewsletter(e.target.firstChild.value)
-      .then((response) => console.log(response.data))
-      .catch((err) => console.log(err.code, err.message));
+    // sendNewsletter(e.target.firstChild.value)
+    //   .then((response) => console.log(response.data))
+    //   .catch((err) => console.log(err.code, err.message));
 
-    // newsletterBtn.current.innerHTML = "Thanks for subscribing";
-
-    // e.target.reset();
+    setTimeout(() => {
+      newsletterBtn.current.innerHTML = "Thanks for subscribing";
+      e.target.reset();
+    }, 2000);
   };
 
   return (

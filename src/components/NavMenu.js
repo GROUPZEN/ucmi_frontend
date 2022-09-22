@@ -8,9 +8,7 @@ const NavMenu = () => {
   return (
     <>
       <Nav toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-      {toggleMenu && (
-        <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-      )}
+      <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>
   );
 };

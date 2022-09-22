@@ -2,91 +2,60 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
   width: 100%;
-  height: 98rem;
-  background-color: $primary-color-50;
+  height: 50rem;
+  color: $primary-color-50;
   z-index: 1000;
-  color: $neutral-color-0;
+  background-color: $neutral-color-0;
   transform: translateY(-100rem);
   opacity: 0;
+  display: grid;
+  grid-template-rows: 25% 1fr;
+  box-shadow: rgba($primary-color-40, 0.1) 0px 10px 15px -3px,
+    rgba($primary-color-40, 0.05) 0px 4px 6px -2px;
 
-  &-active {
-    transform: translateY(0);
-    opacity: 1;
-    animation: menu 800ms ease-in-out alternate;
+  &__welcome {
+    @include flexcenter;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  &__links {
-    flex: 0 0 20%;
-
-    display: flex;
-    flex-direction: column;
-    margin: 5rem;
+  &__line {
+    position: absolute;
+    width: 100%;
+    z-index: -99;
   }
 
   &__link {
-    &--item {
-      padding: 1rem;
+    background: $primary-color-50;
+    padding: 0.8rem 1.5rem;
 
-      a {
-        color: $neutral-color-0;
-        text-transform: uppercase;
-        font: 300 $size-large "Rambla Regular", sans-serif;
-      }
-    }
-  }
-
-  &__info {
-    position: relative;
-    flex: 1;
-    @include flexcenter;
-  }
-
-  &__background {
-    position: relative;
-    @include flexcenter;
-    width: 75%;
-    height: 75%;
-    background-image: url("../images/menu-background.png");
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &--btn {
-      position: absolute;
-      top: 10%;
-      left: 20%;
+    a {
+      font: 300 $size-large "Rubik Regular", sans-serif;
+      color: $neutral-color-0;
+      text-transform: capitalize;
     }
 
-    &--name {
-      font: 700 10rem "Rubik Bold", sans-serif;
-    }
-
-    &--socials {
+    &s {
+      width: 60%;
+      height: 80%;
       @include flexeven;
-      width: 30%;
-      position: absolute;
-      bottom: 10%;
-      right: 20%;
+      margin: 0 auto;
     }
   }
 
-  &__quotes {
+  &__socials {
+    background: $neutral-color-0;
+    padding: 2rem 1rem;
     position: absolute;
-    width: 60rem;
-    height: 12rem;
-
-    &--1 {
-      text-align: right;
-      bottom: 15%;
-      left: 0;
-    }
-
-    &--2 {
-      top: 18%;
-      right: 0%;
-      text-align: left;
-    }
+    bottom: 2rem;
+    left: 50%;
+    width: 20%;
+    margin: 0 auto;
+    @include flexeven;
+    transform: translateX(-50%);
+    box-shadow: rgba($secondary-color-10, 0.2) 0px 8px 24px;
   }
 
   &__close {

@@ -290,71 +290,54 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
   width: 100%;
-  height: 98rem;
-  background-color: #0540f2;
+  height: 50rem;
+  color: #0540f2;
   z-index: 1000;
-  color: #fff;
+  background-color: #fff;
   transform: translateY(-100rem);
-  opacity: 0; }
-  .menu-active {
-    transform: translateY(0);
-    opacity: 1;
-    animation: menu 800ms ease-in-out alternate; }
-  .menu__links {
-    flex: 0 0 20%;
-    display: flex;
-    flex-direction: column;
-    margin: 5rem; }
-  .menu__link--item {
-    padding: 1rem; }
-    .menu__link--item a {
-      color: #fff;
-      text-transform: uppercase;
-      font: 300 3.6rem "Rambla Regular", sans-serif; }
-  .menu__info {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  .menu__background {
-    position: relative;
+  opacity: 0;
+  display: grid;
+  grid-template-rows: 25% 1fr;
+  box-shadow: rgba(47, 96, 244, 0.1) 0px 10px 15px -3px, rgba(47, 96, 244, 0.05) 0px 4px 6px -2px; }
+  .menu__welcome {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75%;
-    height: 75%;
-    background-image: url("../images/menu-background.png");
-    background-repeat: no-repeat;
-    background-position: center; }
-    .menu__background--btn {
-      position: absolute;
-      top: 10%;
-      left: 20%; }
-    .menu__background--name {
-      font: 700 10rem "Rubik Bold", sans-serif; }
-    .menu__background--socials {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center; }
+  .menu__line {
+    position: absolute;
+    width: 100%;
+    z-index: -99; }
+  .menu__link {
+    background: #0540f2;
+    padding: 0.8rem 1.5rem; }
+    .menu__link a {
+      font: 300 3.6rem "Rubik Regular", sans-serif;
+      color: #fff;
+      text-transform: capitalize; }
+    .menu__links {
+      width: 60%;
+      height: 80%;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      width: 30%;
-      position: absolute;
-      bottom: 10%;
-      right: 20%; }
-  .menu__quotes {
+      margin: 0 auto; }
+  .menu__socials {
+    background: #fff;
+    padding: 2rem 1rem;
     position: absolute;
-    width: 60rem;
-    height: 12rem; }
-    .menu__quotes--1 {
-      text-align: right;
-      bottom: 15%;
-      left: 0; }
-    .menu__quotes--2 {
-      top: 18%;
-      right: 0%;
-      text-align: left; }
+    bottom: 2rem;
+    left: 50%;
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: translateX(-50%);
+    box-shadow: rgba(170, 231, 213, 0.2) 0px 8px 24px; }
   .menu__close {
     position: absolute;
     right: 3rem;

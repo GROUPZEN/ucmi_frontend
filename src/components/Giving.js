@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Giving = () => {
   return (
-    <section className="giving">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className="giving"
+    >
       <div className="giving__quotation">
         <div className="giving__quotation--verse">
           "give, and it will be given to you"
@@ -21,7 +27,7 @@ const Giving = () => {
           <button className="btn btn__pay">Pay online</button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

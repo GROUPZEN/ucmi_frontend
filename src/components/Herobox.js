@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
 import Theme from "./Theme";
+import { motion } from "framer-motion";
 
 import HeroHolder from "../assets/svg/hero_holder.svg";
 import HeroPicture from "../assets/images/Rev-Andrews-Home.png";
 import { sendNewsletter } from "../api";
+import { appear, fromBottom, heroAnim } from "../utils/Animations";
 
 const Herobox = () => {
   const [newsletterStatus, setNewsletterStatus] = useState(false);
@@ -26,7 +28,12 @@ const Herobox = () => {
   return (
     <div className="herobox">
       <div className="herobox__container">
-        <div className="herobox__left">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeIn", delay: 2.5 }}
+          className="herobox__left"
+        >
           <img src={HeroHolder} alt="SVG for the background hero" />
           <img
             className="herobox__left--picture"
@@ -37,23 +44,47 @@ const Herobox = () => {
             <h3>rev. andrew ahene</h3>
             <span>head pastor</span>
           </div>
-        </div>
-        <div className="herobox__right">
+        </motion.div>
+        <motion.div
+          variants={heroAnim}
+          initial="hidden"
+          animate="visible"
+          className="herobox__right"
+        >
           <div className="herobox__right--main">
             <h1>
-              Join our
-              <span className="primary-linear-heading"> family </span>,<br /> we
-              want to help you <br /> on your
-              <span className="primary-linear-heading"> journey.</span>
+              <motion.span variants={fromBottom}>
+                Join our
+                <span className="primary-linear-heading"> family,</span>
+              </motion.span>
+              <motion.span variants={fromBottom}>
+                we want to help you
+              </motion.span>
+              <motion.span variants={fromBottom}>
+                on your
+                <span className="primary-linear-heading"> journey.</span>
+              </motion.span>
             </h1>
           </div>
-          <div className="herobox__right--sub">
+          <motion.div
+            variants={appear}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 2, duration: 1 }}
+            className="herobox__right--sub"
+          >
             <h3>
               We welcome you to our newsletter, join our mailing <br /> list and
               let us help you with your Christian life.
             </h3>
-          </div>
-          <div className="herobox__right--newsletter">
+          </motion.div>
+          <motion.div
+            variants={appear}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, delay: 2 }}
+            className="herobox__right--newsletter"
+          >
             {newsletterStatus ? (
               <div className="contact__newsletter--confirm">
                 <h5>
@@ -62,7 +93,7 @@ const Herobox = () => {
                 </h5>
               </div>
             ) : (
-              <form
+              <motion.form
                 onSubmit={handleSubmitNewsletter}
                 id="form-newsletter"
                 className="form"
@@ -82,10 +113,10 @@ const Herobox = () => {
                 >
                   Join our newsletter
                 </button>
-              </form>
+              </motion.form>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
       <Theme />
     </div>

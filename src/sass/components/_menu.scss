@@ -29,7 +29,13 @@
 
   &__link {
     background: $primary-color-50;
+    border-radius: 0.5rem;
     padding: 0.8rem 1.5rem;
+    transition: all 300ms ease-in;
+
+    &:hover {
+      transform: skewX(12deg) !important;
+    }
 
     a {
       font: 300 $size-large "Rubik Regular", sans-serif;

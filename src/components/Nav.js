@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 import LogoLarge from "../assets/images/logo-large.png";
+import { navAppear } from "../utils/Animations";
 
 const Nav = ({ setToggleMenu, toggleMenu }) => {
   const navEle = useRef();
@@ -12,7 +14,13 @@ const Nav = ({ setToggleMenu, toggleMenu }) => {
   });
 
   return (
-    <nav ref={navEle} className="nav">
+    <motion.nav
+      variants={navAppear}
+      initial="hidden"
+      animate="visible"
+      ref={navEle}
+      className="nav"
+    >
       <div className="nav__img">
         <img
           src={LogoLarge}
@@ -27,7 +35,7 @@ const Nav = ({ setToggleMenu, toggleMenu }) => {
       <div className="nav__menu" onClick={() => setToggleMenu(!toggleMenu)}>
         <span className="primary-linear-heading">menu</span>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

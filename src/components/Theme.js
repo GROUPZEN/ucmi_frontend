@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Theme = () => {
   return (
-    <section className="theme primary-linear-background">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 3 }}
+      className="theme primary-linear-background"
+    >
       <div className="theme__container">
         <div className="theme__name secondary-heading">theme</div>
         <div className="theme__title secondary-heading">
@@ -15,7 +21,7 @@ const Theme = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

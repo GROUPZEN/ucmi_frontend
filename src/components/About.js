@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import aboutJson from "../api/about.json";
 
@@ -13,7 +14,12 @@ const About = ({ home }) => {
   }, []);
 
   return (
-    <section className="about">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      // transition={{}}
+      className="about"
+    >
       {about?.map((item, index) => (
         <AboutContainer
           key={index}
@@ -29,7 +35,7 @@ const About = ({ home }) => {
           <Link to="about">View more about</Link>
         </div>
       )}
-    </section>
+    </motion.section>
   );
 };
 

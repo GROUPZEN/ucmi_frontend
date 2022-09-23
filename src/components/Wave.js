@@ -2,6 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Wave = () => {
+  const anim = {
+    start: { pathLength: 0, pathOffset: 1 },
+    stop: { pathLength: 1, pathOffset: 0 },
+    transition: { duration: 1 },
+  };
+
   return (
     <motion.div className="menu__line">
       <svg
@@ -11,9 +17,9 @@ const Wave = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          initial={{ pathLength: 0, pathOffset: 1 }}
-          animate={{ pathLength: 1, pathOffset: 0 }}
-          transition={{ duration: 1 }}
+          variants={anim}
+          initial="start"
+          animate="stop"
           d="M1443 25.4774C1355.73 17.8184 1125.41 47.0556 902.331 225.276C623.48 448.052 357.282 353.647 173.328 183.318C26.165 47.0556 -1.21721 6.32998 3.48708 3"
           stroke="blue"
           strokeOpacity="0.1"

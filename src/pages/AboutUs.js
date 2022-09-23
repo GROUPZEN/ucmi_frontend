@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import Leader from "../components/Leader";
 import About from "../components/About";
@@ -18,6 +19,7 @@ import Sarah from "../assets/images/Ms-Sarah-About.png";
 import SundayFlyer from "../assets/images/flyers/sunday-service.png";
 import Footer from "../components/Footer";
 import NavMenu from "../components/NavMenu";
+import { appearList } from "../utils/Animations";
 // import ExousiaFlyer from "../assets/images/flyers/exousia.png";
 
 const AboutUs = () => {
@@ -54,7 +56,16 @@ const AboutUs = () => {
           </figure>
         </section>
         <About />
-        <section className="about__values--container">
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            staggerChildren: 0.3,
+            when: "beforeChildren",
+          }}
+          className="about__values--container"
+        >
           <div className="about__heading">
             <h3 className="about__heading--title secondary-heading">
               our core values
@@ -62,12 +73,19 @@ const AboutUs = () => {
           </div>
           <div className="about__values">
             {values?.map((value, index) => (
-              <div key={index} className="about__value">
+              <motion.div
+                variants={appearList}
+                initial="hidden"
+                animate="visible"
+                custom={index}
+                key={index}
+                className="about__value"
+              >
                 {value}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
         <section className="about__leaders">
           <div className="about__heading">
             <h3 className="about__heading--title secondary-heading">
